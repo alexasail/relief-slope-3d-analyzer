@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  relief-analyzer-bot:
+    build: .
+    container_name: relief-analyzer-bot
+    restart: unless-stopped
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - OPENTOPOGRAPHY_API_KEY=${OPENTOPOGRAPHY_API_KEY:-demoapikeyot2022}
+    volumes:
+      - ./output:/app/output
+      - ./cache:/app/cache
+    env_file:
+      - .env
+
+
+
+
+
+
+
+
+
+
+
